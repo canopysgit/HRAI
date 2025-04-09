@@ -18,8 +18,9 @@ if (savedTheme === 'true') {
 
 themeToggle.addEventListener('click', toggleDarkMode);
 
-// 滚动动画
+// 滚动动画和初始化
 document.addEventListener('DOMContentLoaded', function() {
+    // 滚动动画
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -34,13 +35,137 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(el);
     });
 
-    // 模态框控制
-    const qrModal = document.getElementById('qrModal');
-    if (qrModal) {
-        qrModal.addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeQrModal();
+    // 初始化模态框事件监听
+    initModalEvents();
+});
+
+// 初始化所有模态框事件
+function initModalEvents() {
+    // VISIER模态框
+    const visierModal = document.getElementById('imageCarouselModal');
+    if (visierModal) {
+        visierModal.addEventListener('click', function(e) {
+            if (e.target === this || e.target.classList.contains('modal-close')) {
+                closeImageCarousel();
             }
         });
     }
-});
+
+    // IBM模态框
+    const ibmModal = document.getElementById('ibmCarouselModal');
+    if (ibmModal) {
+        ibmModal.addEventListener('click', function(e) {
+            if (e.target === this || e.target.classList.contains('modal-close')) {
+                closeIbmImageCarousel();
+            }
+        });
+    }
+}
+
+// 初始化轮播
+let visierSwiper = null;
+let ibmSwiper = null;
+
+function initSwiper(type) {
+    const config = {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        autoHeight: true,
+        observer: true,
+        observeParents: true,
+        on: {
+            init: function() {
+                checkNavigationStatus(this);
+            },
+            slideChange: function() {
+                checkNavigationStatus(this);
+            }
+        }
+    };
+
+    if (type === 'visier') {
+        if (visierSwiper) {
+            visierSwiper.destroy();
+            visierSwiper = null;
+        }
+        const container = document.querySelector('.swiper-container');
+        if (!container) return;
+        visierSwiper = new Swiper('.swiper-container', config);
+        checkNavigationStatus(visierSwiper);
+    } else if (type === 'ibm') {
+        if (ibmSwiper) {
+            ibmSwiper.destroy();
+            ibmSwiper = null;
+        }
+        const container = document.querySelector('.ibm-swiper-container');
+        if (!container) return;
+        ibmSwiper = new Swiper('.ibm-swiper-container', config);
+        checkNavigationStatus(ibmSwiper);
+    }
+}
+
+function checkNavigationStatus(swiper) {
+    if (swiper.isBeginning) {
+        swiper.navigation.prevEl.style.opacity = '0.35';
+        swiper.navigation.prevEl.style.cursor = 'not-allowed';
+    }
+    if (swiper.isEnd) {
+        swiper.navigation.nextEl.style.opacity = '0.35';
+        swiper.navigation.nextEl.style.cursor = 'not-allowed';
+    }
+}
+
+function openImageCarousel(type) {
+    const modal = document.getElementById(type === 'visier' ? 'imageCarouselModal' : 'ibmCarouselModal');
+    if (!modal) return;
+    
+    modal.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+    
+    // 确保在模态框显示后再初始化轮播
+    requestAnimationFrame(() => {
+        initSwiper(type);
+        if (type === 'visier' && visierSwiper) {
+            visierSwiper.update();
+            visierSwiper.slideTo(0, 0);
+        } else if (type === 'ibm' && ibmSwiper) {
+            ibmSwiper.update();
+            ibmSwiper.slideTo(0, 0);
+        }
+    });
+}
+
+function closeImageCarousel() {
+    const modal = document.getElementById('imageCarouselModal');
+    if (!modal) return;
+    
+    modal.classList.add('hidden');
+    document.body.style.overflow = '';
+    
+    if (visierSwiper) {
+        visierSwiper.destroy();
+        visierSwiper = null;
+    }
+}
+
+function closeIbmImageCarousel() {
+    const modal = document.getElementById('ibmCarouselModal');
+    if (!modal) return;
+    
+    modal.classList.add('hidden');
+    document.body.style.overflow = '';
+    
+    if (ibmSwiper) {
+        ibmSwiper.destroy();
+        ibmSwiper = null;
+    }
+}
