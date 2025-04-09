@@ -216,3 +216,64 @@ function closeIbmImageCarousel() {
         ibmSwiper = null;
     }
 }
+
+// 打开赛道模态框
+let track1Swiper = null;
+let track2Swiper = null;
+
+// 存储所有轮播实例
+let swiperInstances = {};
+
+function openTrackModal(trackId) {
+    const modal = document.getElementById(`${trackId}Modal`);
+    if (!modal) return;
+    
+    modal.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+
+    // 初始化轮播
+    if (!swiperInstances[trackId]) {
+        swiperInstances[trackId] = new Swiper(`#${trackId}Modal .swiper-container`, {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            keyboard: {
+                enabled: true,
+            },
+        });
+    }
+}
+
+function closeTrackModal(trackId) {
+    const modal = document.getElementById(`${trackId}Modal`);
+    if (!modal) return;
+    
+    modal.classList.add('hidden');
+    document.body.style.overflow = '';
+    
+    // 销毁轮播实例
+    if (swiperInstances[trackId]) {
+        swiperInstances[trackId].destroy();
+        swiperInstances[trackId] = null;
+    }
+}
+
+// 点击模态框背景关闭
+document.addEventListener('DOMContentLoaded', function() {
+    const trackModals = document.querySelectorAll('[id^="track"]');
+    trackModals.forEach(modal => {
+        modal.addEventListener('click', function(e) {
+            if (e.target === this) {
+                const trackId = this.id.replace('Modal', '');
+                closeTrackModal(trackId);
+            }
+        });
+    });
+});
