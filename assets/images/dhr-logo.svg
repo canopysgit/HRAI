@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+  <rect width="500" height="500" fill="#FF7A00"/>
+  <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="white" style="font-size: 280px; font-weight: 900; font-family: Arial, sans-serif; letter-spacing: -15px;">
+    <tspan style="font-style: italic; font-weight: 800; letter-spacing: -25px; transform: skewX(-15deg);">DHR</tspan><tspan style="font-weight: 800; font-size: 240px;">公会</tspan>
+  </text>
+</svg>
