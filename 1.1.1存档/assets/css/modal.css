@@ -1,0 +1,83 @@
+/* 模态框基础样式 */
+.modal {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Swiper容器样式 */
+.swiper-container {
+    width: 100%;
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Swiper幻灯片样式 */
+.swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.swiper-slide img {
+    max-width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+}
+
+/* 导航按钮样式 */
+.swiper-button-next,
+.swiper-button-prev {
+    color: #fff;
+    cursor: pointer;
+}
+
+/* 分页器样式 */
+.swiper-pagination-bullet {
+    background: #fff;
+    opacity: 0.5;
+}
+
+.swiper-pagination-bullet-active {
+    opacity: 1;
+}
+
+/* 关闭按钮样式 */
+.modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 1001;
+    background: rgba(0, 0, 0, 0.3);
+    border: none;
+    padding: 0.75rem;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+    width: 3.5rem;
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-close:hover {
+    transform: scale(1.1);
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+}
+
+.modal.hidden {
+    opacity: 0;
+    visibility: hidden;
+}

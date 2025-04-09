@@ -144,18 +144,65 @@ function openImageCarousel(type) {
     });
 }
 
+let swiper = null;
+
+function initSwiper() {
+    if (swiper) {
+        swiper.destroy();
+    }
+    
+    swiper = new Swiper('.swiper-container', {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        keyboard: {
+            enabled: true,
+        },
+    });
+}
+
+function openImageCarousel() {
+    const modal = document.getElementById('imageCarouselModal');
+    if (!modal) return;
+    
+    modal.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+    setTimeout(() => {
+        initSwiper();
+    }, 100);
+}
+
 function closeImageCarousel() {
     const modal = document.getElementById('imageCarouselModal');
     if (!modal) return;
     
     modal.classList.add('hidden');
     document.body.style.overflow = '';
-    
-    if (visierSwiper) {
-        visierSwiper.destroy();
-        visierSwiper = null;
+    if (swiper) {
+        swiper.destroy();
+        swiper = null;
     }
 }
+
+// 点击模态框背景关闭
+document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.getElementById('imageCarouselModal');
+    if (modal) {
+        modal.addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeImageCarousel();
+            }
+        });
+    }
+});
 
 function closeIbmImageCarousel() {
     const modal = document.getElementById('ibmCarouselModal');

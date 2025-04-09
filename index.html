@@ -92,13 +92,13 @@
                 </div>
             </div>
         </div>
-        
-        <!-- 子板块二：典型案例分析 -->
+       
+                <!-- 子板块二：典型案例分析 -->
         <div class="max-w-4xl mx-auto mb-16 animate-on-scroll">
             <h3 class="text-2xl font-bold text-gray-800 mb-6">HR AI工具介绍</h3>
             
             <!-- VISIER案例 -->
-            <div class="bg-white rounded-lg shadow-lg p-6 mb-8 cursor-pointer" onclick="openImageCarousel('visier')">
+            <div class="bg-white rounded-lg shadow-lg p-6 mb-8 cursor-pointer" onclick="openImageCarousel()">
                 <h4 class="text-xl font-bold text-gray-800 mb-4">
                     <i class="fas fa-chart-bar text-dhr-orange mr-2"></i>VISIER：通过集成人力资源数据，利用AI技术提供数据驱动的洞察，指导组织战略决策， 提升人力资源管理效能
                 </h4>
@@ -107,16 +107,16 @@
                 </div>
             </div>
 
-            <!-- 图片轮播模态框 -->
-            <div id="imageCarouselModal" class="modal hidden" aria-modal="true" role="dialog">
-                <div class="relative w-full max-w-4xl mx-auto bg-black/90 rounded-lg overflow-hidden">
+            <!-- 简化后的轮播模态框 -->
+            <div id="imageCarouselModal" class="modal hidden fixed inset-0 bg-black bg-opacity-75 z-50 flex items-center justify-center">
+                <div class="relative w-full max-w-4xl mx-auto px-4">
                     <!-- 关闭按钮 -->
-                    <button onclick="closeImageCarousel()" class="modal-close" aria-label="关闭模态框">
+                    <button onclick="closeImageCarousel()" class="absolute top-4 right-4 text-white text-2xl z-50 hover:text-gray-300">
                         <i class="fas fa-times"></i>
                     </button>
                     
                     <!-- 轮播容器 -->
-                    <div class="swiper-container">
+                    <div class="swiper-container bg-black rounded-lg overflow-hidden">
                         <div class="swiper-wrapper">
                             <!-- VISIER案例的图片 -->
                             <div class="swiper-slide">
@@ -131,55 +131,35 @@
                             <div class="swiper-slide">
                                 <img src="assets/images/visier/4.png" alt="VISIER功能展示4" class="w-full h-auto max-h-[80vh] object-contain">
                             </div>
+                            <div class="swiper-slide">
+                                <img src="assets/images/visier/5.png" alt="VISIER功能展示5" class="w-full h-auto max-h-[80vh] object-contain">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="assets/images/visier/6.png" alt="VISIER功能展示6" class="w-full h-auto max-h-[80vh] object-contain">
+                            </div>
                         </div>
-                        <!-- 添加导航按钮 -->
-                        <div class="swiper-button-next"></div>
-                        <div class="swiper-button-prev"></div>
-                        <!-- 添加分页器 -->
+                        <!-- 导航按钮 -->
+                        <div class="swiper-button-next !text-white"></div>
+                        <div class="swiper-button-prev !text-white"></div>
+                        <!-- 分页器 -->
                         <div class="swiper-pagination"></div>
                     </div>
                 </div>
             </div>
-            
-            <!-- IBM案例 -->
-            <div class="bg-white rounded-lg shadow-lg p-6 cursor-pointer" onclick="openImageCarousel('ibm')">
+
+            <!-- IBM案例 - 保留描述但移除轮播功能 -->
+            <div class="bg-white rounded-lg shadow-lg p-6">
                 <h4 class="text-xl font-bold text-gray-800 mb-4">
                     <i class="fas fa-microchip text-dhr-orange mr-2"></i>IBM Watsonx Orchestrate：针对HR专业领域，IBM通过HR AI智能体和HR流程自动化简化复杂流程，助力企业提高工作效率、降低成本
                 </h4>
                 <div class="space-y-4">
-                    <p class="text-gray-700">IBM Watsonx Orchestrate是一款 AI 工作流自动化工具 ，可面向不同业务领域提供AI智能解决方案。针对HR专业领域， IBM 利用近十年专注于 HR 的 AU海外自动化经验，开发出了预构建的 HR AI智能体，利用其丰富的预构建会话式 AI 自动化目录，在遵守合规要求和公司政策的同时，处理复杂的人力资源任务，通过AI智能体助力实现HR流程自动化，卸下单调冗长的任务，提升人力资源领域的工作效率和质量。
-                    </p>
-                </div>
-            </div>
-
-            <!-- IBM案例的图片轮播模态框 -->
-            <div id="ibmCarouselModal" class="modal hidden" aria-modal="true" role="dialog">
-                <div class="relative w-full max-w-4xl mx-auto bg-black/90 rounded-lg overflow-hidden">
-                    <!-- 关闭按钮 -->
-                    <button onclick="closeIbmImageCarousel()" class="modal-close" aria-label="关闭模态框">
-                        <i class="fas fa-times"></i>
-                    </button>
-                    
-                    <!-- 轮播容器 -->
-                    <div class="ibm-swiper-container">
-                        <div class="swiper-wrapper">
-                            <!-- IBM案例的图片 -->
-                            <div class="swiper-slide">
-                                <img src="assets/images/ibm/1.png" alt="IBM功能展示1" class="w-full h-auto max-h-[80vh] object-contain">
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="assets/images/ibm/2.png" alt="IBM功能展示2" class="w-full h-auto max-h-[80vh] object-contain">
-                            </div>
-                        </div>
-                        <!-- 添加导航按钮 -->
-                        <div class="swiper-button-next"></div>
-                        <div class="swiper-button-prev"></div>
-                        <!-- 添加分页器 -->
-                        <div class="swiper-pagination"></div>
-                    </div>
+                    <p class="text-gray-700">IBM Watsonx Orchestrate是一款 AI 工作流自动化工具 ，可面向不同业务领域提供AI智能解决方案。针对HR专业领域， IBM 利用近十年专注于 HR 的 AU海外自动化经验，开发出了预构建的 HR AI智能体，利用其丰富的预构建会话式 AI 自动化目录，在遵守合规要求和公司政策的同时，处理复杂的人力资源任务，通过AI智能体助力实现HR流程自动化，卸下单调冗长的任务，提升人力资源领域的工作效率和质量。</p>
                 </div>
             </div>
         </div>
+
+
+       
         
         <!-- 子板块三：市场特点总结 -->
         <div class="max-w-4xl mx-auto animate-on-scroll">
