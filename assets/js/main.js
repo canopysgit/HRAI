@@ -277,3 +277,119 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+function openCarouselModal(id) {
+    const modal = document.getElementById(`${id}Modal`);
+    modal.classList.remove('hidden');
+    
+    // 初始化 Swiper
+    new Swiper(`#${id}Modal .swiper-container`, {
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        loop: true,
+    });
+}
+
+// 删除重复的 initSwiper 和 openImageCarousel 函数定义
+
+let hrProblemsSwiper = null;
+
+function initHrProblemsSwiper() {
+    if (hrProblemsSwiper) {
+        hrProblemsSwiper.destroy();
+    }
+    
+    hrProblemsSwiper = new Swiper('.hrProblemsSwiper', {
+        slidesPerView: 1,
+        spaceBetween: 0,
+        loop: true,
+        centeredSlides: true,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        keyboard: {
+            enabled: true,
+        }
+    });
+}
+
+function openHrProblemsCarousel() {
+    const modal = document.getElementById('hrProblemsModal');
+    if (!modal) return;
+    
+    modal.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+    
+    // 添加关闭按钮（如果不存在）
+    let closeBtn = modal.querySelector('.modal-close-btn');
+    if (!closeBtn) {
+        closeBtn = document.createElement('button');
+        closeBtn.className = 'modal-close-btn absolute top-4 right-4 z-50 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg hover:bg-gray-100 transition-all duration-200';
+        closeBtn.innerHTML = '<i class="fas fa-times text-gray-800 text-2xl"></i>';
+        closeBtn.onclick = closeHrProblemsCarousel;
+        modal.appendChild(closeBtn);
+    }
+    
+    setTimeout(() => {
+        initHrProblemsSwiper();
+    }, 100);
+}
+
+function closeHrProblemsCarousel() {
+    const modal = document.getElementById('hrProblemsModal');
+    if (!modal) return;
+    
+    modal.classList.add('hidden');
+    document.body.style.overflow = '';
+    
+    if (hrProblemsSwiper) {
+        hrProblemsSwiper.destroy();
+        hrProblemsSwiper = null;
+    }
+}
+
+// 初始化事件监听
+document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.getElementById('hrProblemsModal');
+    
+    if (modal) {
+        // 点击背景关闭
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                closeHrProblemsCarousel();
+            }
+        });
+        
+        // 点击关闭按钮关闭
+        const closeBtn = modal.querySelector('button');
+        if (closeBtn) {
+            closeBtn.addEventListener('click', closeHrProblemsCarousel);
+        }
+        
+        // 阻止内容区域点击冒泡
+        const modalContent = modal.querySelector('.modal-content');
+        if (modalContent) {
+            modalContent.addEventListener('click', function(e) {
+                e.stopPropagation();
+            });
+        }
+    }
+    
+    // ESC键关闭
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            closeHrProblemsCarousel();
+        }
+    });
+});

@@ -80,7 +80,43 @@
                              onclick="openModal(this.src, '国内AI HR工具概览')">
                     </div>
                 </div>               
-                <!-- 希望AI解决的五大类问题 -->
+                                <!-- 希望AI解决的五大类问题 -->
+                <div class="bg-white rounded-xl shadow-lg p-8">
+                    <h4 class="text-2xl font-bold text-gray-800 mb-6">
+                        <i class="fas fa-globe text-dhr-orange mr-3"></i>HR希望AI助力解决的五大类问题
+                    </h4>
+                    <div class="aspect-w-16 aspect-h-9">
+                        <img src="assets/images/HR/5problems.png" alt="HR五大类问题" 
+                             class="rounded-lg w-full h-auto object-contain hover:scale-105 transition-transform duration-300 cursor-pointer"
+                             onclick="openHrProblemsCarousel()">
+                    </div>
+                </div>
+                <!-- HR五大问题轮播模态框 -->
+                <div id="hrProblemsModal" class="modal hidden fixed inset-0 bg-black bg-opacity-75 z-50 flex items-center justify-center">
+                    <button class="modal-close-btn absolute top-4 right-4 z-50 w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg hover:bg-gray-100 transition-all duration-200">
+                        <i class="fas fa-times text-gray-800 text-2xl"></i>
+                    </button>
+                        
+                        <div class="swiper hrProblemsSwiper bg-black rounded-lg overflow-hidden">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide flex items-center justify-center">
+                                    <img src="assets/images/HR/5problems-1.png" alt="HR五大问题1" class="max-h-[80vh] w-auto">
+                                </div>
+                                <div class="swiper-slide flex items-center justify-center">
+                                    <img src="assets/images/HR/5problems-2.png" alt="HR五大问题2" class="max-h-[80vh] w-auto">
+                                </div>
+                                <div class="swiper-slide flex items-center justify-center">
+                                    <img src="assets/images/HR/5problems-3.png" alt="HR五大问题3" class="max-h-[80vh] w-auto">
+                                </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                            <div class="swiper-button-prev text-white"></div>
+                            <div class="swiper-button-next text-white"></div>
+                        </div>
+                    </div>
+                </div>
+             
+                <!-- 希望AI解决的五大类问题 
                 <div class="bg-white rounded-xl shadow-lg p-8">
                     <h4 class="text-2xl font-bold text-gray-800 mb-6">
                         <i class="fas fa-globe text-dhr-orange mr-3"></i>HR希望AI助力解决的五大类问题
@@ -91,7 +127,7 @@
                              onclick="openModal(this.src, '国外AI HR工具概览')">
                     </div>
                 </div>
-            </div>
+            </div>-->
         </div>
        
              <!--     <!-- 子板块二：HR希望应用AI技术解决如下五大类问题 
@@ -191,7 +227,7 @@
                         </div>
                     </div>
                 </div>
-                                        <!-- 赛道一模态框 -->
+                                        <!-- 赛道一模态框 
                 <div id="track1Modal" class="modal hidden fixed inset-0 bg-black bg-opacity-75 z-50 flex items-center justify-center">
                     <div class="relative w-full max-w-4xl mx-auto px-4">
                         <!-- 关闭按钮 -->
@@ -200,23 +236,23 @@
                             <i class="fas fa-times text-white text-2xl group-hover:scale-110 transition-transform"></i>
                         </button>
                         
-                        <!-- 单张图片容器 -->
+                        <!-- 单张图片容器 
                         <div class="bg-black rounded-lg overflow-hidden">
                             <img src="assets/images/tracks/track1.png" alt="智能人才吸引与获取详情" 
                                 class="w-full h-auto max-h-[80vh] object-contain">
                         </div>
                     </div>
-                </div>      
-                <!-- 赛道一模态框轮播 
+                </div> -->      
+                <!-- 赛道一模态框轮播 -->
                 <div id="track1Modal" class="modal hidden fixed inset-0 bg-black bg-opacity-75 z-50 flex items-center justify-center">
                     <div class="relative w-full max-w-4xl mx-auto px-4">
-                        <!-- 关闭按钮 
+                        <!-- 关闭按钮 -->
                         <button onclick="closeTrackModal('track1')" 
                                 class="absolute top-2 right-2 z-50 w-10 h-10 bg-white/20 hover:bg-white/40 rounded-full flex items-center justify-center transition-all duration-200 backdrop-blur-sm group">
                             <i class="fas fa-times text-white text-2xl group-hover:scale-110 transition-transform"></i>
                         </button>
                         
-                        <!-- 轮播容器 
+                        <!-- 轮播容器 -->
                         <div class="swiper-container bg-black rounded-lg overflow-hidden">
                             <div class="swiper-wrapper"> 
                                 <div class="swiper-slide">
@@ -224,10 +260,79 @@
                                 </div>
                                <div class="swiper-slide">
                                     <img src="assets/images/tracks/track1-2.png" alt="智能人才吸引与获取详情2" class="w-full h-auto max-h-[80vh] object-contain">
+                                </div>                                
+                            </div>
+                            <!-- 导航按钮 -->
+                            <div class="swiper-button-next !text-white"></div>
+                            <div class="swiper-button-prev !text-white"></div>
+                            <!-- 分页器 -->
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+                </div> 
+                <!-- 赛道三 -->
+                <div class="track-card bg-white rounded-lg shadow-lg overflow-hidden animate-on-scroll cursor-pointer" onclick="openTrackModal('track3')">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-orange-100 flex items-center justify-center mr-4">
+                                <i class="fas fa-gears text-dhr-orange text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800">员工服务与体验优化</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">通过AI自动化和智能化提升HR运营效率，改善员工服务体验。</p>
+                        <div class="mb-4">
+                            <h4 class="font-semibold text-gray-700 mb-2">核心问题</h4>
+                            <p class="text-gray-600">自动化处理事务性工作、提供7x24小时员工支持、简化HR流程、提升员工满意度、保障数据合规性。</p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-700 mb-2">场景示例</h4>
+                            <ul class="text-gray-600 list-disc list-inside space-y-1">
+                                <li>智能HR服务中心(Chatbot/虚拟助手)</li>
+                                <li>员工入/离/调/转自动化流程</li>
+                                <li>智能薪酬福利咨询与管理</li>
+                                <li>智能考勤与排班</li>
+                                <li>员工体验数据智能分析与洞察</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- 赛道三模态框 -->
+                <div id="track3Modal" class="modal hidden fixed inset-0 bg-black bg-opacity-75 z-50 flex items-center justify-center">
+                <div class="relative w-full max-w-4xl mx-auto px-4">
+                    <!-- 关闭按钮 -->
+                    <button onclick="closeTrackModal('track3')" 
+                            class="absolute top-2 right-2 z-50 w-10 h-10 bg-white/20 hover:bg-white/40 rounded-full flex items-center justify-center transition-all duration-200 backdrop-blur-sm group">
+                        <i class="fas fa-times text-white text-2xl group-hover:scale-110 transition-transform"></i>
+                    </button>
+                    
+                    <!-- 单张图片容器 -->
+                    <div class="bg-black rounded-lg overflow-hidden">
+                        <img src="assets/images/tracks/track3.png" alt="智能人才吸引与获取详情" 
+                            class="w-full h-auto max-h-[80vh] object-contain">
+                    </div>
+                </div>
+                </div>        
+                <!-- 赛道三模态框 
+                <div id="track3Modal" class="modal hidden fixed inset-0 bg-black bg-opacity-75 z-50 flex items-center justify-center">
+                    <div class="relative w-full max-w-4xl mx-auto px-4">
+                        <!-- 关闭按钮 
+                        <button onclick="closeTrackModal('track3')" 
+                                class="absolute top-2 right-2 z-50 w-10 h-10 bg-white/20 hover:bg-white/40 rounded-full flex items-center justify-center transition-all duration-200 backdrop-blur-sm group">
+                            <i class="fas fa-times text-white text-2xl group-hover:scale-110 transition-transform"></i>
+                        </button>
+                        
+                        <!-- 轮播容器 
+                        <div class="swiper-container bg-black rounded-lg overflow-hidden">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="assets/images/tracks/track3-1.png" alt="智能人才吸引与获取详情1" class="w-full h-auto max-h-[80vh] object-contain">
                                 </div>
                                 <div class="swiper-slide">
-                                    <img src="assets/images/tracks/track1-3.png" alt="智能人才吸引与获取详情3" class="w-full h-auto max-h-[80vh] object-contain">
-                                </div> 
+                                    <img src="assets/images/tracks/track3-2.png" alt="智能人才吸引与获取详情2" class="w-full h-auto max-h-[80vh] object-contain">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="assets/images/tracks/track3-3.png" alt="智能人才吸引与获取详情3" class="w-full h-auto max-h-[80vh] object-contain">
+                                </div>
                             </div>
                             <!-- 导航按钮 
                             <div class="swiper-button-next !text-white"></div>
@@ -237,8 +342,78 @@
                         </div>
                     </div>
                 </div> -->
-
-
+                <!-- 赛道五 -->
+                <div class="track-card bg-white rounded-lg shadow-lg overflow-hidden animate-on-scroll cursor-pointer" onclick="openTrackModal('track5')">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-orange-100 flex items-center justify-center mr-4">
+                                <i class="fas fa-shield-halved text-dhr-orange text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800">合规、道德与未来工作模式探索</h3>
+                        </div>
+                        <p class="text-gray-600 mb-4">应对数据隐私、算法公平性等合规挑战，并探索AI在未来新型工作模式下的创新应用。</p>
+                        <div class="mb-4">
+                            <h4 class="font-semibold text-gray-700 mb-2">核心问题</h4>
+                            <p class="text-gray-600">确保AI应用的合规性与道德性、降低用工风险、适应和管理人力资源的未来形态、探索AI在多元化与包容性方面的应用。</p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-gray-700 mb-2">场景示例</h4>
+                            <ul class="text-gray-600 list-disc list-inside space-y-1">
+                                <li>AI在劳动法合规性审查中的应用</li>
+                                <li>算法偏见检测与消除工具</li>
+                                <li>零工/自由职业者管理平台智能化</li>
+                                <li>远程/混合办公效率与协作工具</li>
+                                <li>AI驱动的D&I分析与改进建议</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- 赛道五模态框 -->
+                <div id="track5Modal" class="modal hidden fixed inset-0 bg-black bg-opacity-75 z-50 flex items-center justify-center">
+                <div class="relative w-full max-w-4xl mx-auto px-4">
+                    <!-- 关闭按钮 -->
+                    <button onclick="closeTrackModal('track5')" 
+                            class="absolute top-2 right-2 z-50 w-10 h-10 bg-white/20 hover:bg-white/40 rounded-full flex items-center justify-center transition-all duration-200 backdrop-blur-sm group">
+                        <i class="fas fa-times text-white text-2xl group-hover:scale-110 transition-transform"></i>
+                    </button>
+                    
+                    <!-- 单张图片容器 -->
+                    <div class="bg-black rounded-lg overflow-hidden">
+                        <img src="assets/images/tracks/track5.png" alt="智能人才吸引与获取详情" 
+                            class="w-full h-auto max-h-[80vh] object-contain">
+                    </div>
+                </div>
+                </div>        
+                <!-- 赛道五模态框 
+                <div id="track5Modal" class="modal hidden fixed inset-0 bg-black bg-opacity-75 z-50 flex items-center justify-center">
+                <div class="relative w-full max-w-4xl mx-auto px-4">
+                    <!-- 关闭按钮 
+                    <button onclick="closeTrackModal('track5')" 
+                            class="absolute top-2 right-2 z-50 w-10 h-10 bg-white/20 hover:bg-white/40 rounded-full flex items-center justify-center transition-all duration-200 backdrop-blur-sm group">
+                        <i class="fas fa-times text-white text-2xl group-hover:scale-110 transition-transform"></i>
+                    </button>
+                    
+                    <!-- 轮播容器 
+                    <div class="swiper-container bg-black rounded-lg overflow-hidden">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="assets/images/tracks/track5-1.png" alt="智能人才吸引与获取详情1" class="w-full h-auto max-h-[80vh] object-contain">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="assets/images/tracks/track5-2.png" alt="智能人才吸引与获取详情2" class="w-full h-auto max-h-[80vh] object-contain">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="assets/images/tracks/track5-3.png" alt="智能人才吸引与获取详情3" class="w-full h-auto max-h-[80vh] object-contain">
+                            </div>
+                        </div>
+                        <!-- 导航按钮 
+                        <div class="swiper-button-next !text-white"></div>
+                        <div class="swiper-button-prev !text-white"></div>
+                        <!-- 分页器 
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+                </div> -->
                 <!-- 赛道二 -->
                 <div class="track-card bg-white rounded-lg shadow-lg overflow-hidden animate-on-scroll cursor-pointer" onclick="openTrackModal('track2')">
                     <div class="p-6">
@@ -311,78 +486,7 @@
                     </div>
                 </div>
             </div> -->
-                <!-- 赛道三 -->
-                <div class="track-card bg-white rounded-lg shadow-lg overflow-hidden animate-on-scroll cursor-pointer" onclick="openTrackModal('track3')">
-                    <div class="p-6">
-                        <div class="flex items-center mb-4">
-                            <div class="w-12 h-12 rounded-full bg-orange-100 flex items-center justify-center mr-4">
-                                <i class="fas fa-gears text-dhr-orange text-2xl"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-gray-800">人力资源运营与员工体验优化</h3>
-                        </div>
-                        <p class="text-gray-600 mb-4">通过AI自动化和智能化提升HR运营效率，改善员工服务体验。</p>
-                        <div class="mb-4">
-                            <h4 class="font-semibold text-gray-700 mb-2">核心问题</h4>
-                            <p class="text-gray-600">自动化处理事务性工作、提供7x24小时员工支持、简化HR流程、提升员工满意度、保障数据合规性。</p>
-                        </div>
-                        <div>
-                            <h4 class="font-semibold text-gray-700 mb-2">场景示例</h4>
-                            <ul class="text-gray-600 list-disc list-inside space-y-1">
-                                <li>智能HR服务中心(Chatbot/虚拟助手)</li>
-                                <li>员工入/离/调/转自动化流程</li>
-                                <li>智能薪酬福利咨询与管理</li>
-                                <li>智能考勤与排班</li>
-                                <li>员工体验数据智能分析与洞察</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <!-- 赛道三模态框 -->
-                <div id="track3Modal" class="modal hidden fixed inset-0 bg-black bg-opacity-75 z-50 flex items-center justify-center">
-                <div class="relative w-full max-w-4xl mx-auto px-4">
-                    <!-- 关闭按钮 -->
-                    <button onclick="closeTrackModal('track3')" 
-                            class="absolute top-2 right-2 z-50 w-10 h-10 bg-white/20 hover:bg-white/40 rounded-full flex items-center justify-center transition-all duration-200 backdrop-blur-sm group">
-                        <i class="fas fa-times text-white text-2xl group-hover:scale-110 transition-transform"></i>
-                    </button>
-                    
-                    <!-- 单张图片容器 -->
-                    <div class="bg-black rounded-lg overflow-hidden">
-                        <img src="assets/images/tracks/track3.png" alt="智能人才吸引与获取详情" 
-                            class="w-full h-auto max-h-[80vh] object-contain">
-                    </div>
-                </div>
-            </div>        
-                <!-- 赛道三模态框 
-                <div id="track3Modal" class="modal hidden fixed inset-0 bg-black bg-opacity-75 z-50 flex items-center justify-center">
-                    <div class="relative w-full max-w-4xl mx-auto px-4">
-                        <!-- 关闭按钮 
-                        <button onclick="closeTrackModal('track3')" 
-                                class="absolute top-2 right-2 z-50 w-10 h-10 bg-white/20 hover:bg-white/40 rounded-full flex items-center justify-center transition-all duration-200 backdrop-blur-sm group">
-                            <i class="fas fa-times text-white text-2xl group-hover:scale-110 transition-transform"></i>
-                        </button>
-                        
-                        <!-- 轮播容器 
-                        <div class="swiper-container bg-black rounded-lg overflow-hidden">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <img src="assets/images/tracks/track3-1.png" alt="智能人才吸引与获取详情1" class="w-full h-auto max-h-[80vh] object-contain">
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="assets/images/tracks/track3-2.png" alt="智能人才吸引与获取详情2" class="w-full h-auto max-h-[80vh] object-contain">
-                                </div>
-                                <div class="swiper-slide">
-                                    <img src="assets/images/tracks/track3-3.png" alt="智能人才吸引与获取详情3" class="w-full h-auto max-h-[80vh] object-contain">
-                                </div>
-                            </div>
-                            <!-- 导航按钮 
-                            <div class="swiper-button-next !text-white"></div>
-                            <div class="swiper-button-prev !text-white"></div>
-                            <!-- 分页器 
-                            <div class="swiper-pagination"></div>
-                        </div>
-                    </div>
-                </div> -->
+                
                 <!-- 赛道四 -->
                 <div class="track-card bg-white rounded-lg shadow-lg overflow-hidden animate-on-scroll cursor-pointer" onclick="openTrackModal('track4')">
                     <div class="p-6">
@@ -455,78 +559,7 @@
                     </div>
                 </div>
             </div> -->
-                <!-- 赛道五 -->
-                <div class="track-card bg-white rounded-lg shadow-lg overflow-hidden animate-on-scroll cursor-pointer" onclick="openTrackModal('track5')">
-                    <div class="p-6">
-                        <div class="flex items-center mb-4">
-                            <div class="w-12 h-12 rounded-full bg-orange-100 flex items-center justify-center mr-4">
-                                <i class="fas fa-shield-halved text-dhr-orange text-2xl"></i>
-                            </div>
-                            <h3 class="text-xl font-bold text-gray-800">合规、道德与未来工作模式探索</h3>
-                        </div>
-                        <p class="text-gray-600 mb-4">应对数据隐私、算法公平性等合规挑战，并探索AI在未来新型工作模式下的创新应用。</p>
-                        <div class="mb-4">
-                            <h4 class="font-semibold text-gray-700 mb-2">核心问题</h4>
-                            <p class="text-gray-600">确保AI应用的合规性与道德性、降低用工风险、适应和管理人力资源的未来形态、探索AI在多元化与包容性方面的应用。</p>
-                        </div>
-                        <div>
-                            <h4 class="font-semibold text-gray-700 mb-2">场景示例</h4>
-                            <ul class="text-gray-600 list-disc list-inside space-y-1">
-                                <li>AI在劳动法合规性审查中的应用</li>
-                                <li>算法偏见检测与消除工具</li>
-                                <li>零工/自由职业者管理平台智能化</li>
-                                <li>远程/混合办公效率与协作工具</li>
-                                <li>AI驱动的D&I分析与改进建议</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <!-- 赛道五模态框 -->
-                <div id="track5Modal" class="modal hidden fixed inset-0 bg-black bg-opacity-75 z-50 flex items-center justify-center">
-                <div class="relative w-full max-w-4xl mx-auto px-4">
-                    <!-- 关闭按钮 -->
-                    <button onclick="closeTrackModal('track5')" 
-                            class="absolute top-2 right-2 z-50 w-10 h-10 bg-white/20 hover:bg-white/40 rounded-full flex items-center justify-center transition-all duration-200 backdrop-blur-sm group">
-                        <i class="fas fa-times text-white text-2xl group-hover:scale-110 transition-transform"></i>
-                    </button>
-                    
-                    <!-- 单张图片容器 -->
-                    <div class="bg-black rounded-lg overflow-hidden">
-                        <img src="assets/images/tracks/track5.png" alt="智能人才吸引与获取详情" 
-                            class="w-full h-auto max-h-[80vh] object-contain">
-                    </div>
-                </div>
-            </div>        
-                <!-- 赛道五模态框 
-                <div id="track5Modal" class="modal hidden fixed inset-0 bg-black bg-opacity-75 z-50 flex items-center justify-center">
-                <div class="relative w-full max-w-4xl mx-auto px-4">
-                    <!-- 关闭按钮 
-                    <button onclick="closeTrackModal('track5')" 
-                            class="absolute top-2 right-2 z-50 w-10 h-10 bg-white/20 hover:bg-white/40 rounded-full flex items-center justify-center transition-all duration-200 backdrop-blur-sm group">
-                        <i class="fas fa-times text-white text-2xl group-hover:scale-110 transition-transform"></i>
-                    </button>
-                    
-                    <!-- 轮播容器 
-                    <div class="swiper-container bg-black rounded-lg overflow-hidden">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <img src="assets/images/tracks/track5-1.png" alt="智能人才吸引与获取详情1" class="w-full h-auto max-h-[80vh] object-contain">
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="assets/images/tracks/track5-2.png" alt="智能人才吸引与获取详情2" class="w-full h-auto max-h-[80vh] object-contain">
-                            </div>
-                            <div class="swiper-slide">
-                                <img src="assets/images/tracks/track5-3.png" alt="智能人才吸引与获取详情3" class="w-full h-auto max-h-[80vh] object-contain">
-                            </div>
-                        </div>
-                        <!-- 导航按钮 
-                        <div class="swiper-button-next !text-white"></div>
-                        <div class="swiper-button-prev !text-white"></div>
-                        <!-- 分页器 
-                        <div class="swiper-pagination"></div>
-                    </div>
-                </div>
-            </div> -->
+                
             </div>
             <!-- 特别赛道单独一行 -->
             <div class="track-card bg-white rounded-lg shadow-lg overflow-hidden animate-on-scroll cursor-pointer" onclick="openTrackModal('track6')">
